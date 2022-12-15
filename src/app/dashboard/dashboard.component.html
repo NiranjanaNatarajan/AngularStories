@@ -1,0 +1,21 @@
+<div class="sidebar-opener" (click)="sidebarShow = !sidebarShow">
+    <!-- <span *ngIf="isChart === undefined"> -->
+        DashBoard Sidebar
+    <!-- </span> -->
+</div>
+<div class="sidebar-slider" [class.sidebar-slide-in]="sidebarShow">
+    <div class="sidebar-close" (click)="sidebarShow = !sidebarShow">
+        X
+    </div>
+    <div class="sidebar-content">
+        <h2>DashBoard Sidebar</h2>
+        <button (click)="isChart = true;sidebarShow = !sidebarShow">Go To Charts</button>
+        <button (click)="isChart = false;sidebarShow = !sidebarShow">Go To Tables</button>
+    </div>
+</div>
+<div *ngIf="isChart === true">
+<app-charts></app-charts>
+</div>
+<div *ngIf="isChart === false">
+    <app-tables></app-tables>
+</div>

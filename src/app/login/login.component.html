@@ -1,0 +1,38 @@
+<!-- <button (click)="loginSubmit()">login angular</button> -->
+<app-demo></app-demo>
+
+<div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="loginSubmit($event)" novalidate>
+        <div class="imgcontainer">
+            <h2>{{headerName}}</h2>
+        </div>
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="email" placeholder="Enter Username" minLength="1" formControlName="email" required />
+            <small style="color: red;"
+                *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required">
+                Please enter email address.!
+            </small>
+            <small style="color: red;"
+                *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email">
+                Email address is not valid.!
+            </small><br />
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" minLength="8"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}" formControlName="password" required />
+            <small style="color: red;"
+                *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required">
+                Please enter password.!
+            </small>
+            <!-- <span>{this.value.psw}</span> -->
+            <small style="color: red;"
+            *ngIf="loginForm.controls.password.touched && loginForm.controls.password.invalid && !loginForm.controls.password.errors?.required">The password must contain at least 1 number, special character and 1 uppercase and lowercase letter,
+                 and at least 8 or more characters</small>
+            <button type="submit" [disabled]="!loginForm.valid">Login</button>
+        </div>
+    </form>
+</div>
+
+<!-- for stencil start -->
+<!-- <my-component (submitLogin)="loginSubmit($event)"></my-component> -->
+<!-- for stencil end -->
