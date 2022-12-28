@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ChartsComponent } from './charts/charts.component';
 import { TablesComponent } from './tables/tables.component';
 import { DemoComponent } from './demo/demo.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 // import { ToolbarComponent } from './dashboard/toolbar/toolbar.component';
 // import { NavtabsComponent } from './dashboard/navtabs/navtabs.component';
 // import { SidenavListComponent } from './dashboard/sidenav-list/sidenav-list.component';
@@ -22,6 +23,7 @@ import { DemoComponent } from './demo/demo.component';
     ChartsComponent,
     TablesComponent,
     DemoComponent,
+    CalculatorComponent,
     // ToolbarComponent,
     // NavtabsComponent,
     // SidenavListComponent

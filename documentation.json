@@ -761,6 +761,104 @@
             }
         },
         {
+            "name": "CalculatorComponent",
+            "id": "component-CalculatorComponent-a58aceb3178b7355059b99f77bb90a66090f6e768fa2127806551abfe7260d8dd9d99122eb6637fa69c48ca78f308ca48670e4b64fa231fa81cf49f1a8ec1b7e",
+            "file": "src/app/calculator/calculator.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-calculator",
+            "styleUrls": [
+                "./calculator.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./calculator.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "aValue",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "btnName",
+                    "defaultValue": "'ClickMe'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "bValue",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "flag",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "result",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "resultanswer",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-calculator',\n  templateUrl: './calculator.component.html',\n  styleUrls: ['./calculator.component.css']\n})\nexport class CalculatorComponent {\n  @Input() btnName = 'ClickMe'\n  @Input() flag: any;\n  @Input() aValue: number = 0;\n  @Input() bValue: number = 0;\n  result: number = 0;\n\n  resultanswer() {\n    if(this.flag === true) {\n      this.result = this.aValue * this.bValue;\n    } else if (this.flag === false) {\n      this.result = this.aValue + this.bValue;\n    } else {\n      this.result = this.aValue - this.bValue;\n    }\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./calculator.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "\n<br />\n<label>Number A : </label>\n<input type=\"number\" [(ngModel)]=\"aValue\" />\n<br />\n<br/>\n<label>Number B : </label>\n<input type=\"number\" [(ngModel)]=\"bValue\" />\n<br />\n<br/>\n<button type=\"button\" (click)=\"resultanswer()\">{{btnName}}</button><br /><br />\n<b><span>Answer : {{result}}</span></b>"
+        },
+        {
             "name": "ChartsComponent",
             "id": "component-ChartsComponent-da73ff0ef8d3d9e067f0ae07c2198651add7c5a0f2621b1182ffad118e884ed540c4f31a578ff8cc4e9366de1808ca216523cb067a28bee1e1f36ebb0e9e8ffa",
             "file": "src/app/charts/charts.component.ts",
@@ -1350,13 +1448,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-d54e47f608b19a781e860bdd173b4d8dfba9ec99bf18d23fbed51dcb1d18be2dcdb8e3709cba39d83e7b16d577642d8e63895215abede778edf0c341b9519372",
+            "id": "module-AppModule-c561a0db3f0dd0539e5f04a33dd37f6f64af1dedfda90203d2cfa56daaf77fde7c7d46e8b82e09600ad22bf0b5049eebdf92fb4a2b573461b3dd8e00f560ff17",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { DashboardComponent } from './dashboard/dashboard.component';\nimport { LoginComponent } from './login/login.component';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { HttpClientModule } from '@angular/common/http';\nimport { ChartsComponent } from './charts/charts.component';\nimport { TablesComponent } from './tables/tables.component';\nimport { DemoComponent } from './demo/demo.component';\n// import { ToolbarComponent } from './dashboard/toolbar/toolbar.component';\n// import { NavtabsComponent } from './dashboard/navtabs/navtabs.component';\n// import { SidenavListComponent } from './dashboard/sidenav-list/sidenav-list.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    DashboardComponent,\n    LoginComponent,\n    ChartsComponent,\n    TablesComponent,\n    DemoComponent,\n    // ToolbarComponent,\n    // NavtabsComponent,\n    // SidenavListComponent\n  ],\n  imports: [\n    BrowserModule,\n    HttpClientModule,\n    ReactiveFormsModule,\n    AppRoutingModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { DashboardComponent } from './dashboard/dashboard.component';\nimport { LoginComponent } from './login/login.component';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { HttpClientModule } from '@angular/common/http';\nimport { ChartsComponent } from './charts/charts.component';\nimport { TablesComponent } from './tables/tables.component';\nimport { DemoComponent } from './demo/demo.component';\nimport { CalculatorComponent } from './calculator/calculator.component';\n// import { ToolbarComponent } from './dashboard/toolbar/toolbar.component';\n// import { NavtabsComponent } from './dashboard/navtabs/navtabs.component';\n// import { SidenavListComponent } from './dashboard/sidenav-list/sidenav-list.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    DashboardComponent,\n    LoginComponent,\n    ChartsComponent,\n    TablesComponent,\n    DemoComponent,\n    CalculatorComponent,\n    // ToolbarComponent,\n    // NavtabsComponent,\n    // SidenavListComponent\n  ],\n  imports: [\n    BrowserModule,\n    HttpClientModule,\n    ReactiveFormsModule,\n    AppRoutingModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -1367,6 +1465,9 @@
                     "elements": [
                         {
                             "name": "AppComponent"
+                        },
+                        {
+                            "name": "CalculatorComponent"
                         },
                         {
                             "name": "ChartsComponent"
@@ -1451,6 +1552,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "DemoAddition",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/calculator.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "DemoGreen",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1461,10 +1572,30 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "DemoMultiplication",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/calculator.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "DemoRed",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/demo.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DemoSubtraction",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/calculator.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -1604,6 +1735,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/calculator.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CalculatorComponent>",
+                "defaultValue": "(args: CalculatorComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/demo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1655,6 +1796,48 @@
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
+            "src/stories/calculator.stories.ts": [
+                {
+                    "name": "DemoAddition",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/calculator.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DemoMultiplication",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/calculator.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "DemoSubtraction",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/calculator.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/calculator.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<CalculatorComponent>",
+                    "defaultValue": "(args: CalculatorComponent) => ({\r\n  props: args,\r\n})"
+                }
+            ],
             "src/stories/demo.stories.ts": [
                 {
                     "name": "DemoGreen",
@@ -1908,7 +2091,7 @@
         ]
     },
     "coverage": {
-        "count": 2,
+        "count": 1,
         "status": "low",
         "files": [
             {
@@ -1918,6 +2101,15 @@
                 "name": "AppComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/calculator/calculator.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CalculatorComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -2195,6 +2387,46 @@
                 "coveragePercent": 83,
                 "coverageCount": "5/6",
                 "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/calculator.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DemoAddition",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/calculator.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DemoMultiplication",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/calculator.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DemoSubtraction",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/calculator.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             },
             {
                 "filePath": "src/stories/demo.stories.ts",
