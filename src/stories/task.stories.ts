@@ -36,7 +36,7 @@ export const Pinned = Template.bind({});
 Pinned.args = {
   task: {
     ...Default.args['task'],
-    state: 'pinned task',
+    state: 'pinned task', 
   },
 };
 
