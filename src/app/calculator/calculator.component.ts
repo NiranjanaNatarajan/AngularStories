@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./calculator.component.css']
 })
 export class CalculatorComponent {
-  @Input() btnName = 'ClickMe'
+  @Input() btnName = 'Subtraction of two numbers'
   @Input() flag: any;
   @Input() aValue: number = 0;
   @Input() bValue: number = 0;

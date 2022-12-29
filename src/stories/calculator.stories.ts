@@ -13,24 +13,24 @@ const Template: Story<CalculatorComponent> = (args: CalculatorComponent) => ({
   props: args,
 });
 
-export const DemoMultiplication = Template.bind({});
-DemoMultiplication.args = {
+export const Multiplication = Template.bind({});
+Multiplication.args = {
   flag: true,
   aValue: 4,
   bValue: 3,
   btnName: 'Multiplication of two numbers',
 };
 
-export const DemoAddition = Template.bind({});
-DemoAddition.args = {
+export const Addition = Template.bind({});
+Addition.args = {
   flag: false,
   aValue: 4,
   bValue: 3,
   btnName: 'Addition of two numbers',
 };
 
-export const DemoSubtraction = Template.bind({});
-DemoSubtraction.args = {
+export const Subtraction = Template.bind({});
+Subtraction.args = {
   flag: undefined,
   aValue: 4,
   bValue: 3,

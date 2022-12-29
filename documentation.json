@@ -762,7 +762,7 @@
         },
         {
             "name": "CalculatorComponent",
-            "id": "component-CalculatorComponent-a58aceb3178b7355059b99f77bb90a66090f6e768fa2127806551abfe7260d8dd9d99122eb6637fa69c48ca78f308ca48670e4b64fa231fa81cf49f1a8ec1b7e",
+            "id": "component-CalculatorComponent-7ec435f652e3119f88270b0daf82aa91bd5c94bdfe47e7461161ae381abc16d8be81fc32f28b44d7f580d8e6b8c07dbb1b6294ed925439de3c892fc1768ce2b6",
             "file": "src/app/calculator/calculator.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -790,7 +790,7 @@
                 },
                 {
                     "name": "btnName",
-                    "defaultValue": "'ClickMe'",
+                    "defaultValue": "'Subtraction of two numbers'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 9,
@@ -847,7 +847,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-calculator',\n  templateUrl: './calculator.component.html',\n  styleUrls: ['./calculator.component.css']\n})\nexport class CalculatorComponent {\n  @Input() btnName = 'ClickMe'\n  @Input() flag: any;\n  @Input() aValue: number = 0;\n  @Input() bValue: number = 0;\n  result: number = 0;\n\n  resultanswer() {\n    if(this.flag === true) {\n      this.result = this.aValue * this.bValue;\n    } else if (this.flag === false) {\n      this.result = this.aValue + this.bValue;\n    } else {\n      this.result = this.aValue - this.bValue;\n    }\n  }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-calculator',\n  templateUrl: './calculator.component.html',\n  styleUrls: ['./calculator.component.css']\n})\nexport class CalculatorComponent {\n  @Input() btnName = 'Subtraction of two numbers'\n  @Input() flag: any;\n  @Input() aValue: number = 0;\n  @Input() bValue: number = 0;\n  result: number = 0;\n\n  resultanswer() {\n    if(this.flag === true) {\n      this.result = this.aValue * this.bValue;\n    } else if (this.flag === false) {\n      this.result = this.aValue + this.bValue;\n    } else {\n      this.result = this.aValue - this.bValue;\n    }\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -856,7 +856,7 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "\n<br />\n<label>Number A : </label>\n<input type=\"number\" [(ngModel)]=\"aValue\" />\n<br />\n<br/>\n<label>Number B : </label>\n<input type=\"number\" [(ngModel)]=\"bValue\" />\n<br />\n<br/>\n<button type=\"button\" (click)=\"resultanswer()\">{{btnName}}</button><br /><br />\n<b><span>Answer : {{result}}</span></b>"
+            "templateData": "\n<br />\n<label>Number A : </label>\n<input type=\"number\" [(ngModel)]=\"aValue\" />\n<br />\n<br/>\n<label>Number B : </label>\n<input type=\"number\" [(ngModel)]=\"bValue\" />\n<br />\n<br/>\n<button type=\"button\" (click)=\"resultanswer()\">{{btnName}}</button><br /><br />\n<b><span>Answer : {{result}}--{{bValue}}</span></b>"
         },
         {
             "name": "ChartsComponent",
@@ -1322,7 +1322,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<!-- <button (click)=\"loginSubmit()\">login angular</button> -->\r\n<app-demo></app-demo>\r\n\r\n<div class=\"container\">\r\n    <form [formGroup]=\"loginForm\" (ngSubmit)=\"loginSubmit($event)\" novalidate>\r\n        <div class=\"imgcontainer\">\r\n            <h2>{{headerName}}</h2>\r\n        </div>\r\n        <div class=\"container\">\r\n            <label><b>Username</b></label>\r\n            <input type=\"email\" placeholder=\"Enter Username\" minLength=\"1\" formControlName=\"email\" required />\r\n            <small style=\"color: red;\"\r\n                *ngIf=\"loginForm.controls.email.touched && loginForm.controls.email.errors?.required\">\r\n                Please enter email address.!\r\n            </small>\r\n            <small style=\"color: red;\"\r\n                *ngIf=\"loginForm.controls.email.touched && loginForm.controls.email.errors?.email\">\r\n                Email address is not valid.!\r\n            </small><br />\r\n            <label><b>Password</b></label>\r\n            <input type=\"password\" placeholder=\"Enter Password\" minLength=\"8\"\r\n                pattern=\"(?=.*\\d)(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}\" formControlName=\"password\" required />\r\n            <small style=\"color: red;\"\r\n                *ngIf=\"loginForm.controls.password.touched && loginForm.controls.password.errors?.required\">\r\n                Please enter password.!\r\n            </small>\r\n            <!-- <span>{this.value.psw}</span> -->\r\n            <small style=\"color: red;\"\r\n            *ngIf=\"loginForm.controls.password.touched && loginForm.controls.password.invalid && !loginForm.controls.password.errors?.required\">The password must contain at least 1 number, special character and 1 uppercase and lowercase letter,\r\n                 and at least 8 or more characters</small>\r\n            <button type=\"submit\" [disabled]=\"!loginForm.valid\">Login</button>\r\n        </div>\r\n    </form>\r\n</div>\r\n\r\n<!-- for stencil start -->\r\n<!-- <my-component (submitLogin)=\"loginSubmit($event)\"></my-component> -->\r\n<!-- for stencil end -->\r\n"
+            "templateData": "<!-- <button (click)=\"loginSubmit()\">login angular</button> -->\r\n<app-calculator></app-calculator>\r\n<br/>\r\n<app-demo></app-demo>\r\n\r\n<div class=\"container\">\r\n    <form [formGroup]=\"loginForm\" (ngSubmit)=\"loginSubmit($event)\" novalidate>\r\n        <div class=\"imgcontainer\">\r\n            <h2>{{headerName}}</h2>\r\n        </div>\r\n        <div class=\"container\">\r\n            <label><b>Username</b></label>\r\n            <input type=\"email\" placeholder=\"Enter Username\" minLength=\"1\" formControlName=\"email\" required />\r\n            <small style=\"color: red;\"\r\n                *ngIf=\"loginForm.controls.email.touched && loginForm.controls.email.errors?.required\">\r\n                Please enter email address.!\r\n            </small>\r\n            <small style=\"color: red;\"\r\n                *ngIf=\"loginForm.controls.email.touched && loginForm.controls.email.errors?.email\">\r\n                Email address is not valid.!\r\n            </small><br />\r\n            <label><b>Password</b></label>\r\n            <input type=\"password\" placeholder=\"Enter Password\" minLength=\"8\"\r\n                pattern=\"(?=.*\\d)(?=.*[a-z])(?=.*[!@#$%^&*])(?=.*[A-Z]).{8,}\" formControlName=\"password\" required />\r\n            <small style=\"color: red;\"\r\n                *ngIf=\"loginForm.controls.password.touched && loginForm.controls.password.errors?.required\">\r\n                Please enter password.!\r\n            </small>\r\n            <!-- <span>{this.value.psw}</span> -->\r\n            <small style=\"color: red;\"\r\n            *ngIf=\"loginForm.controls.password.touched && loginForm.controls.password.invalid && !loginForm.controls.password.errors?.required\">The password must contain at least 1 number, special character and 1 uppercase and lowercase letter,\r\n                 and at least 8 or more characters</small>\r\n            <button type=\"submit\" [disabled]=\"!loginForm.valid\">Login</button>\r\n        </div>\r\n    </form>\r\n</div>\r\n\r\n<!-- for stencil start -->\r\n<!-- <my-component (submitLogin)=\"loginSubmit($event)\"></my-component> -->\r\n<!-- for stencil end -->\r\n"
         },
         {
             "name": "PageComponent",
@@ -1448,13 +1448,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-c561a0db3f0dd0539e5f04a33dd37f6f64af1dedfda90203d2cfa56daaf77fde7c7d46e8b82e09600ad22bf0b5049eebdf92fb4a2b573461b3dd8e00f560ff17",
+            "id": "module-AppModule-3f733e60d7402315eaa0b6bb8c770ced939efbb902bca91f3475751299faad68ce414c862a308a2b0c619b8891ede041aab71d19dd71b71a735fc4c5c660b1be",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { DashboardComponent } from './dashboard/dashboard.component';\nimport { LoginComponent } from './login/login.component';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { HttpClientModule } from '@angular/common/http';\nimport { ChartsComponent } from './charts/charts.component';\nimport { TablesComponent } from './tables/tables.component';\nimport { DemoComponent } from './demo/demo.component';\nimport { CalculatorComponent } from './calculator/calculator.component';\n// import { ToolbarComponent } from './dashboard/toolbar/toolbar.component';\n// import { NavtabsComponent } from './dashboard/navtabs/navtabs.component';\n// import { SidenavListComponent } from './dashboard/sidenav-list/sidenav-list.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    DashboardComponent,\n    LoginComponent,\n    ChartsComponent,\n    TablesComponent,\n    DemoComponent,\n    CalculatorComponent,\n    // ToolbarComponent,\n    // NavtabsComponent,\n    // SidenavListComponent\n  ],\n  imports: [\n    BrowserModule,\n    HttpClientModule,\n    ReactiveFormsModule,\n    AppRoutingModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { DashboardComponent } from './dashboard/dashboard.component';\nimport { LoginComponent } from './login/login.component';\nimport { ReactiveFormsModule, FormsModule } from '@angular/forms';\nimport { HttpClientModule } from '@angular/common/http';\nimport { ChartsComponent } from './charts/charts.component';\nimport { TablesComponent } from './tables/tables.component';\nimport { DemoComponent } from './demo/demo.component';\nimport { CalculatorComponent } from './calculator/calculator.component';\n// import { ToolbarComponent } from './dashboard/toolbar/toolbar.component';\n// import { NavtabsComponent } from './dashboard/navtabs/navtabs.component';\n// import { SidenavListComponent } from './dashboard/sidenav-list/sidenav-list.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    DashboardComponent,\n    LoginComponent,\n    ChartsComponent,\n    TablesComponent,\n    DemoComponent,\n    CalculatorComponent,\n    // ToolbarComponent,\n    // NavtabsComponent,\n    // SidenavListComponent\n  ],\n  imports: [\n    BrowserModule,\n    HttpClientModule,\n    ReactiveFormsModule,\n    FormsModule,\n    AppRoutingModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -1605,21 +1605,21 @@
                 "name": "environment",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\r\n    production: true,\r\n    apiUrl: 'https://jsonplaceholder.typicode.com/users'\r\n  }"
-            },
-            {
-                "name": "environment",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/environments/environment.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\r\n    production: false,\r\n    apiUrl: 'https://jsonplaceholder.typicode.com/users'\r\n  }"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\r\n    production: true,\r\n    apiUrl: 'https://jsonplaceholder.typicode.com/users'\r\n  }"
             },
             {
                 "name": "fakeBackendProvider",
@@ -1735,21 +1735,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/calculator.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<CalculatorComponent>",
-                "defaultValue": "(args: CalculatorComponent) => ({\r\n  props: args,\r\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/demo.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<DemoComponent>",
                 "defaultValue": "(args: DemoComponent) => ({\r\n  props: args,\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/calculator.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<CalculatorComponent>",
+                "defaultValue": "(args: CalculatorComponent) => ({\r\n  props: args,\r\n})"
             },
             {
                 "name": "Template",
@@ -1870,18 +1870,6 @@
                     "defaultValue": "(args: DemoComponent) => ({\r\n  props: args,\r\n})"
                 }
             ],
-            "src/environments/environment.prod.ts": [
-                {
-                    "name": "environment",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\r\n    production: true,\r\n    apiUrl: 'https://jsonplaceholder.typicode.com/users'\r\n  }"
-                }
-            ],
             "src/environments/environment.ts": [
                 {
                     "name": "environment",
@@ -1892,6 +1880,18 @@
                     "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\r\n    production: false,\r\n    apiUrl: 'https://jsonplaceholder.typicode.com/users'\r\n  }"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\r\n    production: true,\r\n    apiUrl: 'https://jsonplaceholder.typicode.com/users'\r\n  }"
                 }
             ],
             "src/app/interceptors/fake-backend.ts": [
